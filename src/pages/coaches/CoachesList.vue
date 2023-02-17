@@ -3,15 +3,17 @@
         FILTER
     </section>
     <section>
-        <div class="controls">
-            <button>Refresh</button>
-            <router-link to="/register">Register as Coach</router-link>
-        </div>
-        <ul v-if="hasCoaches">
-            <coach-item v-for="coach in coaches" :key="coach.id" :id="coach.id" :first-name="coach.firstName"
-                :last-name="coach.lastName" :rate="coach.hourlyRate" :areas="coach.areas"></coach-item>
-        </ul>
-        <h2 v-else>No Coaches Available</h2>
+        <base-card>
+            <div class="controls">
+                <button>Refresh</button>
+                <router-link to="/register">Register as Coach</router-link>
+            </div>
+            <ul v-if="hasCoaches">
+                <coach-item v-for="coach in coaches" :key="coach.id" :id="coach.id" :first-name="coach.firstName"
+                    :last-name="coach.lastName" :rate="coach.hourlyRate" :areas="coach.areas"></coach-item>
+            </ul>
+            <h2 v-else>No Coaches Available</h2>
+        </base-card>
 </section>
 </template>
 
