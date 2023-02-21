@@ -50,7 +50,7 @@ export default {
                 if (this.activeFilters.career && coach.areas.includes('career')) {
                     return true;
                 }
-                return false
+                return false;
             })
         },
         hasCoaches() {

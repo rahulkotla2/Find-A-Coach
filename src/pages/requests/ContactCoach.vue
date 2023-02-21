@@ -24,8 +24,7 @@ export default {
             message: '',
             formIsValid: true,
         }
-    }
-    ,
+    },
     methods: {
         submitForm() {
             this.formIsValid = true;
@@ -39,7 +38,7 @@ export default {
                 coachId: this.$route.params.id,
             });
 
-        this.$router.replace('/coaches');
+            this.$router.replace('/coaches');
         }
     }
 }
