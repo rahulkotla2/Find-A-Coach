@@ -11,9 +11,9 @@
         </span>
         <span class="filter-option">
             <input type="checkbox" id="career" checked @change="setFilter">
-            <label for="career">Carrer</label>
+            <label for="career">Career</label>
         </span>
-</base-card>
+    </base-card>
 </template>
 
 <script>
