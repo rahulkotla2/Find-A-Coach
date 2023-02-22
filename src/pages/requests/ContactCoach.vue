@@ -12,7 +12,6 @@
         <div class="actions">
             <base-button>submit</base-button>
         </div>
-
     </form>
 </template>
 
