@@ -10,9 +10,24 @@
 <script>
 import TheHeader from './components/layout/TheHeader.vue';
 export default {
+    computed: {
+        didAutoLogout() {
+            return this.$store.getters.didAutoLogout;
+        }
+    },
     components: {
         TheHeader,
     },
+    created() {
+        this.$store.dispatch('tryLogin');
+    },
+    watch: {
+        didAutoLogout(curValue, oldValue) {
+            if (curValue && curValue !== oldValue) {
+                this.$router.replace('/coaches');
+            }
+        }
+    }
 }
 </script>
 

@@ -5,10 +5,9 @@ export default {
     hasCoaches(state) {
         return state.coaches && state.coaches.length > 0;
     },
-    isCoach(_,_2, _3, rootGetters) {
+    isCoach(_, _2, _3, rootGetters) {
         const coaches = rootGetters['coaches/coaches'];
         const userId = rootGetters.userId;
-        console.log(rootGetters);
         return coaches.some(coach => coach.id === userId);
     },
     shouldUpdate(state) {
