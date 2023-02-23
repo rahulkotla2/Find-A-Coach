@@ -8,8 +8,8 @@ export default {
             hourlyRate: payload.rate,
             areas: payload.areas,
         }
-
-        const response = await fetch(`https://find-a-coach-418ac-default-rtdb.firebaseio.com/coaches/${userId}.json`, {
+        const token = context.rootGetters.token;
+        const response = await fetch(`https://find-a-coach-418ac-default-rtdb.firebaseio.com/coaches/${userId}.json?auth=` + token, {
             method: 'PUT',
             body: JSON.stringify(coachData),
         });
@@ -25,7 +25,7 @@ export default {
             id: userId,
         });
     },
-    async loadCoaches(context,payload) {
+    async loadCoaches(context, payload) {
         if (!payload.forceRefresh && !context.getters.shouldUpdate) {
             return
         }
