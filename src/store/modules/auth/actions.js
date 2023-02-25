@@ -37,8 +37,7 @@ export default {
         }
 
         const expiresIn = +responseData.expiresIn * 1000;
-        const expirationDate = new Date().getTime + expiresIn;
-
+        const expirationDate = new Date().getTime() + expiresIn;
         timer = setTimeout(() => {
             context.dispatch('autoLogout');
         }, expiresIn)
@@ -62,7 +61,6 @@ export default {
         if (expiresIn < 0) {
             return
         }
-
         timer = setTimeout(() => {
             context.dispatch('autoLogout');
         }, expiresIn);
